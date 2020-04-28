@@ -1,8 +1,9 @@
 html, body, #root {
   height: 100%;
+  font-weight: bolder;
 }
 body {
-  background: #333;
+  background: dodgerblue;
   margin: 0;
   display: grid;
   padding: 3em;
@@ -11,15 +12,17 @@ body {
 .boxes {
   display: grid;
   grid-gap: 2em;
-  grid-template-columns: repeat(2, minmax(350px, 1fr));
+  grid-template-columns: repeat(2, minmax(500px, 1fr));
   grid-template-rows: auto;
 }
 .box {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  border: 4px solid black;
+
   h1 {
-    font-size: 20px;
+    font-size: 34px;
     margin: 0 0 1rem 0;
   }
   .content {
@@ -35,15 +38,52 @@ body {
   }
 }
 .button {
-  background: hotpink;
-  border: 1px solid transparent;
-  color: white;
+  background: dodgerblue;
+  border: 2px solid transparent;
+  color: black;
   margin-right: 1em;
   padding: .25em .75em;
   transition: all .25s ease-in;
   &:hover {
-    background: white;
-    border: 1px solid hotpink;
-    color: #333;
+    background: black;
+    border: 2px solid red;
+    color: red;
   }
+}
+
+.box1 {
+  text-align: center;
+  margin: 0 auto;
+  width: 500px;
+  .image {
+    justify-content: center;
+    margin: 0 auto;
+    width: 50%;
+    border: solid 3px black;
+  }
+  .carName {
+    font-size: 30px;
+    font-weight: bolder;
+  }
+  .carAmount {
+    font-size: 21px;
+  }
+  .dollars {
+    font-size: 24px;
+  }
+}
+
+@keyframes black-to-red {
+  50% {
+    color: red;
+  }
+  100% {
+    color: black;
+  }
+}
+  
+.carName, .dollars {
+  animation-name: black-to-red;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
 }
